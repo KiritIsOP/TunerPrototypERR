@@ -24,7 +24,6 @@ public class Robot extends TimedRobot {
 
   @Override
   public void disabledInit() {
-    DataLogManager.stop();
   }
 
   @Override
@@ -53,7 +52,6 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
-    DataLogManager.start();
   }
 
   @Override
