@@ -3,6 +3,7 @@ package frc.robot.commands;
 import com.ctre.phoenix6.swerve.SwerveDrivetrain;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Pose3d;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Camera;
 import frc.robot.subsystems.CommandSwerveDrivetrain;
@@ -19,7 +20,8 @@ public class UpdateOdoFromVisionCommand extends Command {
         this.commandSwerveDrivetrain = commandSwerveDrivetrain;
         // each subsystem used by the command must be passed into the
         // addRequirements() method (which takes a vararg of Subsystem)
-        addRequirements(this.commandSwerveDrivetrain);
+        addRequirements();
+        SmartDashboard.putData("camera", camera);
     }
 
     /**
